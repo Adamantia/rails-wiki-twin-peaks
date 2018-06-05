@@ -1,0 +1,18 @@
+<body><div id="container">
+  <h2>Twin Peaks Quotes</h2>
+
+  <div class= col-sm-8 col-sm-offset-2>
+
+  <% @articles.each do |article| %>
+    <class='title-<%= article.title %>'>
+    <p class ='content'> By: "<%= link_to article.title, article_path(article) %>"</p>
+      Quote: "<%= article.content %>" ></p>
+      <%= link_to "Delete", article_path(article), method: :delete %>
+      <%= link_to "Edit", edit_article_path(article), method: :edit %>
+  <% end %>
+
+</div>
+</div>
+</body>
+<%= link_to "Add a new article", new_article_path %>
+
